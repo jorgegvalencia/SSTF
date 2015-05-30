@@ -5,7 +5,7 @@ require_once __DIR__."/settings.php";
 require_once VENDOR_DIR.'/smarty/libs/Smarty.class.php';
 require_once VENDOR_DIR.'/autoload.php';
 require_once PROJECT_DIR.'/db_connection.php';
-require_once PROJECT_DIR.'/routes/tracker_routes.php';
+require_once PROJECT_DIR.'/routes.php';
 
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -31,6 +31,7 @@ if (isset($parameters['module'])){
 } else {
 	$module = "";
 }
+
 include_once __DIR__.'/'.$module.$parameters['controller'].'.php';
 
 ?>

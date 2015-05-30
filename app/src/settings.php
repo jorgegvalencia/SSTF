@@ -5,5 +5,5 @@ define("PROJECT_DIR",  __DIR__);
 const MODULES = array(
 	"api",
 	"auth",
-	"default"
+	"dashboard"
 );

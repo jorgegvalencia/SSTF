@@ -7,7 +7,7 @@ $(document).ready(function(){
 			action = 'add';
 		}
 		$.ajax({
-			url: "http://localhost:8888/api.php/user/"+$('#username').data('userid')+"/favoritos",
+			url: "http://localhost:8888/api/api.php/user/"+$('#username').data('userid')+"/favoritos",
 			method: "POST",
 			async: false,
 			data: {
@@ -69,7 +69,7 @@ $(document).ready(function(){
 			$('#errorAccionVacia').show();
 		} else {
 			$.ajax({
-				url: "http://localhost:8888/api.php/accion/"+$.trim(str),
+				url: "http://localhost:8888/api/api.php/accion/"+$.trim(str),
 				method: "GET",
 				dataType: "JSON",
 				success: function( xhr ) {	

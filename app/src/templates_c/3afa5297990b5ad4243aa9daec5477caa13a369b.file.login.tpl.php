@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 00:11:53
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 01:11:23
          compiled from "auth/templates/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1268677674556a35a95a67b2-19128235%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3afa5297990b5ad4243aa9daec5477caa13a369b' => 
     array (
       0 => 'auth/templates/login.tpl',
-      1 => 1432999379,
+      1 => 1433025796,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_556a35a969f981_37088575',
   'variables' => 
   array (
     'userError' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'failPassError' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_556a35a969f981_37088575',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556a35a969f981_37088575')) {function content_556a35a969f981_37088575($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -35,8 +35,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<meta name="author" content="ISW2-Grupo5">
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<!-- Bootstrap Form Helpers -->
-	<link href="css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
 	<!-- Custom styles -->
 	<style>
 		body {

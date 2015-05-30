@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     function toggleFav (action, code) {
 		$.ajax({
-			url: "http://localhost:8888/api.php/user/"+$('#username').data('userid')+"/favoritos",
+			url: "http://localhost:8888/api/api.php/user/"+$('#username').data('userid')+"/favoritos",
 			method: "POST",
 			async: false,
 			data: {

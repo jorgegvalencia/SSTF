@@ -6,10 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="ISW2-Grupo5">
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/font-awesome-4.3.0/css/font-awesome.css">
-	<!-- Bootstrap Form Helpers -->
-	<link href="css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
 	<!-- Custom styles -->
 	<style>
 		ul{
@@ -103,8 +101,8 @@
 			</section>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/home.js"></script>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../dashboard/js/home.js"></script>
 </body>
 </html>
