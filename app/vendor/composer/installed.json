@@ -1,0 +1,172 @@
+[
+    {
+        "name": "symfony/http-foundation",
+        "version": "v2.6.6",
+        "version_normalized": "2.6.6.0",
+        "target-dir": "Symfony/Component/HttpFoundation",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/HttpFoundation.git",
+            "reference": "8a6337233f08f7520de97f4ffd6f00e947d892f9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/8a6337233f08f7520de97f4ffd6f00e947d892f9",
+            "reference": "8a6337233f08f7520de97f4ffd6f00e947d892f9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/expression-language": "~2.4",
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2015-04-01 16:50:12",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\HttpFoundation\\": ""
+            },
+            "classmap": [
+                "Symfony/Component/HttpFoundation/Resources/stubs"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony HttpFoundation Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/routing",
+        "version": "v2.6.6",
+        "version_normalized": "2.6.6.0",
+        "target-dir": "Symfony/Component/Routing",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Routing.git",
+            "reference": "4e173a645b63ff60a124f3741b4f15feebd908fa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Routing/zipball/4e173a645b63ff60a124f3741b4f15feebd908fa",
+            "reference": "4e173a645b63ff60a124f3741b4f15feebd908fa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "doctrine/annotations": "~1.0",
+            "doctrine/common": "~2.2",
+            "psr/log": "~1.0",
+            "symfony/config": "~2.2",
+            "symfony/expression-language": "~2.4",
+            "symfony/http-foundation": "~2.3",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/yaml": "~2.0,>=2.0.5"
+        },
+        "suggest": {
+            "doctrine/annotations": "For using the annotation loader",
+            "symfony/config": "For using the all-in-one router or any loader",
+            "symfony/expression-language": "For using expression matching",
+            "symfony/yaml": "For using the YAML loader"
+        },
+        "time": "2015-03-30 15:54:10",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Routing\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony Routing Component",
+        "homepage": "http://symfony.com",
+        "keywords": [
+            "router",
+            "routing",
+            "uri",
+            "url"
+        ]
+    },
+    {
+    "name": "smarty/smarty",
+    "type": "library",
+    "description": "Smarty - the compiling PHP template engine",
+    "keywords": ["templating"],
+    "homepage": "http://www.smarty.net",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Monte Ohrt",
+            "email": "monte@ohrt.com"
+        },
+        {
+            "name": "Uwe Tews",
+            "email": "uwe.tews@googlemail.com"
+        },
+        {
+            "name": "Rodney Rehm",
+            "email": "rodney.rehm@medialize.de"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/smarty",
+        "issues": "http://code.google.com/p/smarty-php/issues/list",
+        "forum": "http://www.smarty.net/forums/"
+    },
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload": {
+        "classmap": [
+            "libs/Smarty.class.php",
+            "libs/SmartyBC.class.php",
+            "libs/sysplugins/"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.1.x-dev"
+        }
+    }
+
+}
+]
