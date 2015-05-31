@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 01:09:18
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 10:42:52
          compiled from "dashboard/templates/favoritos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1540552564556a3ff69dc8a1-31346573%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '945b5b95b732626b7709a8af0e2c062d1ba3a8df' => 
     array (
       0 => 'dashboard/templates/favoritos.tpl',
-      1 => 1433027357,
+      1 => 1433061485,
       2 => 'file',
     ),
   ),
@@ -39,10 +39,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<!-- Custom styles -->
 	<?php echo '<script'; ?>
- type="text/javascript" src="/js/jquery-1.11.2.min.js"><?php echo '</script'; ?>
+ type="text/javascript" src="../../js/jquery-1.11.2.min.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- type="text/javascript" src="/js/bootstrap.min.js"><?php echo '</script'; ?>
+ type="text/javascript" src="../../js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
  type="text/javascript" src="../../dashboard/js/favorites.js"><?php echo '</script'; ?>
@@ -106,7 +106,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['accion']->key => $_smarty_tpl->tpl_vars['accion']->value) {
 $_smarty_tpl->tpl_vars['accion']->_loop = true;
 ?>
-						<li class="list-group-item" id="accion<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+						<li class="list-group-item" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+" id="accion<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 ">
 							<div class="row" id="data<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 ">
@@ -136,7 +137,8 @@ $_smarty_tpl->tpl_vars['accion']->_loop = true;
 " hidden>
 								<div class="col-md-10 deleted">
 								Acción eliminada <?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
- de la lista de favoritos <button class="btn btn-primary undo" type="button" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+ de la lista de favoritos <button class="btn btn-primary undo" type="button" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 ">Deshacer</button> <span id="timer<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 "></span>
 								</div>

@@ -16,18 +16,22 @@ $(document).ready(function(){
         }
     }
 
-    function toggleFav (action, code) {
+    function toggleFav (action, code, position) {
+    	var data = {
+				action: action,
+				id: code
+			}
+		if ($.type(position) != 'undefined'){
+			data['position'] = position;
+		}
 		$.ajax({
 			url: "http://localhost:8888/api/api.php/user/"+$('#username').data('userid')+"/favoritos",
 			method: "POST",
 			async: false,
-			data: {
-				action: action,
-				id: code
-			},
+			data: data,
 			dataType: "JSON",
 			success: function( xhr ) {	
-				/*if (action == 'del'){
+				if (action == 'del'){
 					$("#data"+code).hide();
 					$("#deleted"+code).show();
 					timeoutsTimers[code] = 11;
@@ -36,8 +40,7 @@ $(document).ready(function(){
 					$("#deleted"+code).hide();
 					$("#data"+code).show();
 					clearTimeout(timeouts[code]);
-				}*/
-            	$("#accion"+code).remove();
+				}
 	        	if ($("#lista li").length == 0) {
 					$("#wrapContent").html('');
 					$("#wrapContent").html('<h4>Usted no tiene favoritos</h4>');
@@ -62,7 +65,9 @@ $(document).ready(function(){
 		})
 	}
 
-	$('.btnDel').on('click',function(){
+	$('.btnDel').on('click',function(event){
+		event.preventDefault;
+		event.stopInmediatePropagation;
 		var codigo = $(this).data('code');
 		toggleFav('del',codigo);
 		
@@ -72,7 +77,8 @@ $(document).ready(function(){
 	});
 	$('.undo').on('click',function(){
 		var codigo = $(this).data('code');
-		toggleFav('add',codigo);
+		var posicion = $(this).data('position');
+		toggleFav('add',codigo,posicion);
 	});
 
 });

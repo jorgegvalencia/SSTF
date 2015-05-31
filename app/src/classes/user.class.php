@@ -34,7 +34,9 @@ class user {
 
     public static function toggleFavorite($conn,$parameters,$context)
     {
-        if (!strcmp($context['action'], 'add')) {
+        if (!strcmp($context['action'], 'add') && isset($context['position']) && strcmp($context['position'], '')) {
+            $result = mysqli_query($conn,"INSERT INTO Usuario_has_Favorito VALUES ('".$parameters['id']."','".$context['id']."', '".$context['position']."')");
+        } else if (!strcmp($context['action'], 'add')) {
             $result = mysqli_query($conn,"INSERT INTO Usuario_has_Favorito SELECT '".$parameters['id']."','".$context['id']."', IFNULL(MAX(posicion)+1,0) FROM Usuario_has_Favorito where Usuario_idUsuario='".$parameters['id']."'");
         } else if (!strcmp($context['action'], 'del')){
             $result = mysqli_query($conn,"DELETE FROM Usuario_has_Favorito where Usuario_idUsuario='".$parameters['id']."' AND Accion_codigo='".$context['id']."'");

@@ -8,8 +8,8 @@
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<!-- Custom styles -->
-	<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../dashboard/js/favorites.js"></script>
 	<style>
 		.list-group-item{
@@ -64,7 +64,7 @@
 					<div class="form-group" id="wrapLista">
 					<ul class="list-group" id="lista">
 						{foreach from=$acciones item=accion}
-						<li class="list-group-item" id="accion{$accion.codigo}">
+						<li class="list-group-item" data-position="{$accion.posicion}" id="accion{$accion.codigo}">
 							<div class="row" id="data{$accion.codigo}">
 								<div class="col-md-2">
 									<label> Nombre:</label><span> {$accion.nombre}</span>
@@ -84,7 +84,7 @@
 							</div>
 							<div class="row" id="deleted{$accion.codigo}" hidden>
 								<div class="col-md-10 deleted">
-								Acción eliminada {$accion.codigo} de la lista de favoritos <button class="btn btn-primary undo" type="button" data-code="{$accion.codigo}">Deshacer</button> <span id="timer{$accion.codigo}"></span>
+								Acción eliminada {$accion.codigo} de la lista de favoritos <button class="btn btn-primary undo" type="button" data-position="{$accion.posicion}" data-code="{$accion.codigo}">Deshacer</button> <span id="timer{$accion.codigo}"></span>
 								</div>
 							</div>
 							<div class="row collapse" id="more{$accion.codigo}">
