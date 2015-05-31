@@ -16,6 +16,11 @@ if (isset($_SESSION['PHPSESSID']) && isset($_SESSION['USER_ID'])){
     		$row = array_map("utf8_encode", $row );
     		array_push($acciones,$row);	
     	}
+        if (isset($_GET['view']) && (!strcmp($_GET['view'], 'list') || !strcmp($_GET['view'], 'grid'))){
+            $smarty->assign('view',$_GET['view']);
+        } else {
+            $smarty->assign('view','list');
+        }
     	$smarty->assign('acciones',$acciones);
     }
 	$smarty->display('favoritos.tpl');
