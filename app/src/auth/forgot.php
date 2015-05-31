@@ -19,7 +19,7 @@ if (isset($_POST) && count($_POST)>0 && !isset($_SESSION['PHPSESSID']) && !isset
             $mailer = Swift_Mailer::newInstance($transport);
             $enlace = "<p>Dirijase a <a href='http://localhost:8888/tracker.php/login'>http://localhost:8888/tracker.php/login</a></p>";
             $message = Swift_Message::newInstance('Recuperación contraseña')
-                ->setFrom(array('practicasoftware2@gmail.com' => 'Héctor Ambit'))
+                ->setFrom(array('SSFTSuppot@noreply.com' => 'SSFT Suppot'))
                 ->setTo(array($row['email']))
                 ->setBody("<p>Su contraseña es: ".$row['contrasenia']."</p>".$enlace, 'text/html');
             try {
