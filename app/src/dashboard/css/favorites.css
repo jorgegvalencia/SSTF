@@ -3,6 +3,8 @@
 	/*background-color: #D9EDF7;*/
 	border-color: #BCE8F1;
 	color: #31708F;
+	cursor:row-resize;
+	margin: 5px 0 5px 0;
 }
 .col-sm-3{
 	text-align: right;
@@ -13,7 +15,7 @@
 ul{
 	margin: 10px auto;
 }
-		#msgFav{
+#msgFav{
 	z-index:1000;
 	text-align: center;
 	display: none;
@@ -27,7 +29,7 @@ ul{
 
 .glyphicon {background-color: transparent; top:0;}
 .listaGrid { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-.listaGrid .ui-state-default { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 33%;height: 200px;}
+.listaGrid .ui-state-default { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 33%;height: 200px; cursor:move;}
 .ui-state-default ul { list-style-type: none; padding: 0;}
 .timerGrid { color:#000; text-align: center; font-size: 2em ; margin-top: 1em}
 .undo { margin-top: 1em}

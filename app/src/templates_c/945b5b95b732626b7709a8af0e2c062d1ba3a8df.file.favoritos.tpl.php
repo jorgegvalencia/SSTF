@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 11:26:38
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 12:41:27
          compiled from "dashboard/templates/favoritos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1540552564556a3ff69dc8a1-31346573%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '945b5b95b732626b7709a8af0e2c062d1ba3a8df' => 
     array (
       0 => 'dashboard/templates/favoritos.tpl',
-      1 => 1433064395,
+      1 => 1433068884,
       2 => 'file',
     ),
   ),
@@ -97,7 +97,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['accion']->key => $_smarty_tpl->tpl_vars['accion']->value) {
 $_smarty_tpl->tpl_vars['accion']->_loop = true;
 ?>
-						<li class="list-group-item" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+						<li class="list-group-item" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
 " id="accion<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 ">
 							<div class="row" id="data<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
@@ -157,7 +158,8 @@ $_smarty_tpl->tpl_vars['accion']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['accion']->key => $_smarty_tpl->tpl_vars['accion']->value) {
 $_smarty_tpl->tpl_vars['accion']->_loop = true;
 ?>
-					  		<li class="ui-state-default" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+					  		<li class="ui-state-default" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
 " id="accion<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 ">
 					  			<div class="row data" id="data<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>

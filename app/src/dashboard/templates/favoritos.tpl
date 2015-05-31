@@ -52,7 +52,7 @@
 					<div class="form-group" id="wrapLista">
 					<ul class="list-group" id="lista">
 						{foreach from=$acciones item=accion}
-						<li class="list-group-item" data-position="{$accion.posicion}" id="accion{$accion.codigo}">
+						<li class="list-group-item" data-code="{$accion.codigo}" data-position="{$accion.posicion}" id="accion{$accion.codigo}">
 							<div class="row" id="data{$accion.codigo}">
 								<div class="col-md-2">
 									<label> Nombre:</label><span> {$accion.nombre}</span>
@@ -91,7 +91,7 @@
 					{if $view eq grid}
 					<ul id="lista" class="listaGrid">
 						{foreach from=$acciones item=accion}
-					  		<li class="ui-state-default" data-position="{$accion.posicion}" id="accion{$accion.codigo}">
+					  		<li class="ui-state-default" data-code="{$accion.codigo}" data-position="{$accion.posicion}" id="accion{$accion.codigo}">
 					  			<div class="row data" id="data{$accion.codigo}">
 						  			<button class="btn btn-primary col-md-6 col-md-offset-1" type="button" data-toggle="collapse" data-target="#more{$accion.codigo}" aria-expanded="false" aria-controls="more{$accion.codigo}">Más Información</button>
 									<button class="btn btn-danger btnDel col-md-3 col-md-offset-1" data-code="{$accion.codigo}">Eliminar</button>
