@@ -68,6 +68,7 @@
 			<button class="btn btn-primary btn-block" type="submit">Iniciar sesión</button>
 		</form>
 		<a href="registration/step1" class="btn btn-primary btn-register" type="submit">Registrarse</a>
+		<p><a href="forgot">¿Olvidó su contraseña?</a></p>
 	</div>
 	<footer class="footer">
 	<p>&copy; Grupo05 - ISW2 2014-2015</p>

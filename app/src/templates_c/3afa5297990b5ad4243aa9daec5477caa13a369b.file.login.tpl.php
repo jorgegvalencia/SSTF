@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 01:11:23
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 14:40:10
          compiled from "auth/templates/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1268677674556a35a95a67b2-19128235%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3afa5297990b5ad4243aa9daec5477caa13a369b' => 
     array (
       0 => 'auth/templates/login.tpl',
-      1 => 1433025796,
+      1 => 1433076008,
       2 => 'file',
     ),
   ),
@@ -96,6 +96,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<button class="btn btn-primary btn-block" type="submit">Iniciar sesión</button>
 		</form>
 		<a href="registration/step1" class="btn btn-primary btn-register" type="submit">Registrarse</a>
+		<p><a href="forgot">¿Olvidó su contraseña?</a></p>
 	</div>
 	<footer class="footer">
 	<p>&copy; Grupo05 - ISW2 2014-2015</p>
