@@ -20,6 +20,16 @@ $logout = new Route(
     array() // methods
 );
 
+$forgot = new Route(
+    '/forgot', // path
+    array('controller' => 'forgot', 'module' => 'auth'), // default values
+    array(), // requirements
+    array(), // options
+    '{localhost}', // host
+    array(), // schemes
+    array() // methods
+);
+
 $step1 = new Route(
     '/step1', // path
     array('controller' => 'registro', 'module' => 'auth'), // default values
@@ -59,4 +69,5 @@ $registrationRoutesCollection->addPrefix('/registration');
 $authRoutesCollection = new RouteCollection();
 $authRoutesCollection->add('login', $login);
 $authRoutesCollection->add('logout', $logout);
+$authRoutesCollection->add('forgot', $forgot);
 $authRoutesCollection->addCollection($registrationRoutesCollection);

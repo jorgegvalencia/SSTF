@@ -41,12 +41,23 @@ $toggleFavoritesRoute = new Route(
     array(), // schemes
     array('POST') // methods
 );
+
+$reorderFavoritesRoute = new Route(
+    '/{id}/favoritos/reorder', // path
+    array('object'=>'user', 'controller' => 'reorderFavorites'), // default values
+    array('id'=>'[0-9]+'), // requirements
+    array(), // options
+    '{localhost}', // host
+    array(), // schemes
+    array('POST') // methods
+);
 	
 $userRoutesCollection = new RouteCollection();
 $userRoutesCollection->add('getUserRoute', $getUserRoute);
 $userRoutesCollection->add('putUserRoute', $putUserRoute);
 $userRoutesCollection->add('getFavoritesRoute', $getFavoritesRoute);
 $userRoutesCollection->add('toggleFavoritesRoute', $toggleFavoritesRoute);
+$userRoutesCollection->add('reorderFavoritesRoute', $reorderFavoritesRoute);
 $userRoutesCollection->addPrefix('/user');
 
 ?>

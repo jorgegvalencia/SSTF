@@ -55,6 +55,40 @@ class user {
         }
     }
 
+    public static function reorderFavorites($conn,$parameters,$context)
+    {   
+        if (isset($context["favorites"])) {
+            mysqli_autocommit($conn, FALSE);
+            foreach ($context["favorites"] as $code => $position) {
+                $query = "UPDATE Usuario_has_Favorito SET `posicion`='".$position."' WHERE `Usuario_idUsuario`='".$parameters['id']."' and `Accion_codigo`='".$code."'";
+                //print_r($query);
+                $result = mysqli_query($conn,$query);
+                if(!$result){
+                    header($_SERVER["SERVER_PROTOCOL"]." 500 Internal Server Error");
+                    print_r($conn->error);
+                    mysqli_rollback($conn);
+                    exit();
+                }
+
+            }
+
+            if (!mysqli_commit($conn)) {
+                header($_SERVER["SERVER_PROTOCOL"]." 500 Internal Server Error");
+                print_r($conn->error);
+                mysqli_rollback($conn);
+                exit(); 
+            }
+            mysqli_close($conn);
+            //header('Content-Type: application/json',true);
+            //echo json_encode('');
+
+        } else {
+            header($_SERVER["SERVER_PROTOCOL"]." 400 Bad Request");
+            print_r("Datos incorrectos");
+            exit(); 
+        }
+    }
+
     private function insertPersonalData()
     {
 

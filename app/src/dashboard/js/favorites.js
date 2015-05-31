@@ -1,4 +1,46 @@
 $(document).ready(function(){
+	$( "#lista" ).sortable({
+		stop: function(event, ui) {
+			data={'favorites':{}};
+			$("#lista>li").each(function(newPosition,favoriteElement){
+				if ($(favoriteElement).data('position') != newPosition){
+					console.debug($(favoriteElement).data('code')+": "+$(favoriteElement).data('position')+" -> "+newPosition);
+					data['favorites'][$(favoriteElement).data('code')] = newPosition;
+				}
+			});
+			$.ajax({
+				url: "http://localhost:8888/api/api.php/user/"+$('#username').data('userid')+"/favoritos/reorder",
+				method: "POST",
+				async: false,
+				data: data,
+				dataType: "text",
+				success: function( xhr ) {	
+
+				},
+				error: function( xhr, textStatus, errorThrown ) {
+						console.debug(xhr.responseText)	
+						$('#msgFav').hide();
+						if (typeof(errorTimeoutMsg) != 'undefined'){
+							clearTimeout(errorTimeoutMsg);
+						}
+						if (typeof(errorTimeoutRedirect) != 'undefined'){
+							clearTimeout(errorTimeoutRedirect);
+						}
+						$('#msgFav').html('<p>Se ha producido un error en el servidor al reordenar sus favoritos.</p> <p>La pagina será recargada<p>');
+		        		$('#msgFav').css('left',($(window).width()/2)-($('#msgFav').width()/2));
+						$('#msgFav').fadeIn(1000);
+				   		errorTimeoutMsg = setTimeout(function() {
+				        	$('#msgFav').fadeOut(1000);
+				    		}, 3000);
+						errorTimeoutRedirect = setTimeout(function() {
+				        	window.location.reload();
+				    		}, 3000);
+
+					}
+			});
+		}
+	});
+    $( "#lista" ).disableSelection();
 	timeoutsTimers = [];
 	timeouts = [];
 	function countDown(codigo){

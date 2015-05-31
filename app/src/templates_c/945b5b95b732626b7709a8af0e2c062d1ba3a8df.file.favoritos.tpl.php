@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 10:42:52
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 12:41:27
          compiled from "dashboard/templates/favoritos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1540552564556a3ff69dc8a1-31346573%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '945b5b95b732626b7709a8af0e2c062d1ba3a8df' => 
     array (
       0 => 'dashboard/templates/favoritos.tpl',
-      1 => 1433061485,
+      1 => 1433068884,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'userid' => 0,
     'username' => 0,
+    'view' => 0,
     'favoritesError' => 0,
     'favoritesEmpty' => 0,
     'acciones' => 0,
@@ -37,9 +38,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<meta name="author" content="ISW2-Grupo5">
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../../dashboard/css/favorites.css">
 	<!-- Custom styles -->
 	<?php echo '<script'; ?>
  type="text/javascript" src="../../js/jquery-1.11.2.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="../../js/jquery-ui.min.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
  type="text/javascript" src="../../js/bootstrap.min.js"><?php echo '</script'; ?>
@@ -47,34 +53,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<?php echo '<script'; ?>
  type="text/javascript" src="../../dashboard/js/favorites.js"><?php echo '</script'; ?>
 >
-	<style>
-		.list-group-item{
-			font-size: 13px;
-			/*background-color: #D9EDF7;*/
-			border-color: #BCE8F1;
-			color: #31708F;
-		}
-		.col-sm-3{
-			text-align: right;
-		}
-		.deleted{
-			text-align: center;
-		}
-		ul{
-			margin: 10px auto;
-		}
-				#msgFav{
-			z-index:1000;
-			text-align: center;
-			display: none;
-			position:fixed;
-			padding: 10px 20px;
-			top: 50px;
-			border-radius:10px;
-		   -webkit-border-radius:10px;
-		   -moz-border-radius:10px;
-		}
-	</style>
 </head>
 <body>
 		<div id="msgFav" class="bg-danger"></div>
@@ -94,11 +72,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</ul>
 			</nav>
 			<section class="col-md-10" id="wrapContent">
+				<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse">
+				      <ul class="nav navbar-nav">
+				        <li class="<?php if ($_smarty_tpl->tpl_vars['view']->value=='list') {?>active<?php }?>"><a href="?view=list" class="glyphicon glyphicon-th-list"></a></li>
+				        <li class="<?php if ($_smarty_tpl->tpl_vars['view']->value=='grid') {?>active<?php }?>"><a href="?view=grid" class="glyphicon glyphicon-th"></a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
 				<?php if (isset($_smarty_tpl->tpl_vars['favoritesError']->value)) {?>
 					<p class="text-danger">Se ha produccido un error en la base de datos, intentelo de nuevo más tarde</p>
 				<?php } elseif (isset($_smarty_tpl->tpl_vars['favoritesEmpty']->value)) {?>
 					<h4>Usted no tiene favoritos</h4>
 				<?php } else { ?>
+					<?php if ($_smarty_tpl->tpl_vars['view']->value=='list') {?>
 					<div class="form-group" id="wrapLista">
 					<ul class="list-group" id="lista">
 						<?php  $_smarty_tpl->tpl_vars['accion'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['accion']->_loop = false;
@@ -106,7 +97,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['accion']->key => $_smarty_tpl->tpl_vars['accion']->value) {
 $_smarty_tpl->tpl_vars['accion']->_loop = true;
 ?>
-						<li class="list-group-item" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+						<li class="list-group-item" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
 " id="accion<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
 ">
 							<div class="row" id="data<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
@@ -158,6 +150,67 @@ $_smarty_tpl->tpl_vars['accion']->_loop = true;
 						<?php } ?>
 					</ul>
 					</div>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['view']->value=='grid') {?>
+					<ul id="lista" class="listaGrid">
+						<?php  $_smarty_tpl->tpl_vars['accion'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['accion']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['acciones']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['accion']->key => $_smarty_tpl->tpl_vars['accion']->value) {
+$_smarty_tpl->tpl_vars['accion']->_loop = true;
+?>
+					  		<li class="ui-state-default" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+" id="accion<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+">
+					  			<div class="row data" id="data<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+">
+						  			<button class="btn btn-primary col-md-6 col-md-offset-1" type="button" data-toggle="collapse" data-target="#more<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+" aria-expanded="false" aria-controls="more<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+">Más Información</button>
+									<button class="btn btn-danger btnDel col-md-3 col-md-offset-1" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+">Eliminar</button>
+						  			<ul class="col-md-9 col-md-offset-2">
+										<li>
+											<label> Nombre:</label><span> <?php echo $_smarty_tpl->tpl_vars['accion']->value['nombre'];?>
+</span>
+										</li>
+										<li>
+											<label> Código: </label><span> <?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+</span>
+										</li>
+										<li>
+											<label> Valor actual: </label><span> <?php echo $_smarty_tpl->tpl_vars['accion']->value['valor_actual'];?>
+</span>
+										</li>
+										<div class="collapse" id="more<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+">
+											<li>
+												<label> Valor Acumulado: </label><span> <?php echo $_smarty_tpl->tpl_vars['accion']->value['vol_acumulado'];?>
+</span>
+											</li>
+											<li>
+												<label> Valor jornada anterior: </label><span> <?php echo $_smarty_tpl->tpl_vars['accion']->value['valor_jornadaAnterior'];?>
+</span>
+											</li>
+										</div>
+						  			</ul>
+								</div>
+								<div class="row" id="deleted<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+" hidden>
+									<div class="col-md-10 col-md-offset-1 deleted">
+										Acción eliminada <?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+ de la lista de favoritos 
+									</div>
+									<button class="btn btn-primary undo col-md-4 col-md-offset-4" type="button" data-position="<?php echo $_smarty_tpl->tpl_vars['accion']->value['posicion'];?>
+" data-code="<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+">Deshacer</button>
+									<span class="col-md-12 timerGrid" id="timer<?php echo $_smarty_tpl->tpl_vars['accion']->value['codigo'];?>
+"></span>
+								</div>
+					  		</li>
+						<?php } ?>
+					</ul>
+					<?php }?>
 				<?php }?>
 
 			</section>
