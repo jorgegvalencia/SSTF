@@ -6,6 +6,10 @@ $(document).ready(function(){
 				if ($(favoriteElement).data('position') != newPosition){
 					console.debug($(favoriteElement).data('code')+": "+$(favoriteElement).data('position')+" -> "+newPosition);
 					data['favorites'][$(favoriteElement).data('code')] = newPosition;
+					console.log($(favoriteElement));
+					console.log($(favoriteElement).data('position'));
+					$(favoriteElement).data('position',newPosition);
+					console.log($(favoriteElement).data('position'));
 				}
 			});
 			$.ajax({
