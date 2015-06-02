@@ -60,8 +60,8 @@
 		<form class="form-signin" method='post' action=''>
 			<h3 class="form-signin-heading">Sistema Simplificado de Tracker Financiero</h3>
 			<hr>
-			<label for="inputUser" class="sr-only">Nobre de usuario o E-mail</label>
-			<input type="text" name="user" id="inputUser" class="form-control" placeholder="Nobre de usuario o E-mail" required>
+			<label for="inputUser" class="sr-only">Nombre de usuario o E-mail</label>
+			<input type="text" name="user" id="inputUser" class="form-control" placeholder="Nombre de usuario o E-mail" required>
 			{if isset($noUserError)}
 				<p class="text-danger">El usuario o e-mail no existe</p>
 			{/if}

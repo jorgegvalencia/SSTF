@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-31 14:40:13
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-02 23:17:56
          compiled from "auth/templates/forgot.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1537513899556af76ea7ceb0-86516776%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6def1312a8bf2addb52f93b8f44953e8158ee654' => 
     array (
       0 => 'auth/templates/forgot.tpl',
-      1 => 1433075694,
+      1 => 1433278814,
       2 => 'file',
     ),
   ),
@@ -88,8 +88,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<form class="form-signin" method='post' action=''>
 			<h3 class="form-signin-heading">Sistema Simplificado de Tracker Financiero</h3>
 			<hr>
-			<label for="inputUser" class="sr-only">Nobre de usuario o E-mail</label>
-			<input type="text" name="user" id="inputUser" class="form-control" placeholder="Nobre de usuario o E-mail" required>
+			<label for="inputUser" class="sr-only">Nombre de usuario o E-mail</label>
+			<input type="text" name="user" id="inputUser" class="form-control" placeholder="Nombre de usuario o E-mail" required>
 			<?php if (isset($_smarty_tpl->tpl_vars['noUserError']->value)) {?>
 				<p class="text-danger">El usuario o e-mail no existe</p>
 			<?php }?>
